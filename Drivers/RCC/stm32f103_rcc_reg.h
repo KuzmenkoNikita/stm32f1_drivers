@@ -4,7 +4,7 @@
 
 #define STM32F103_RCC_CR_OFFSET         0x00    /* Clock control register offset */
 
-#define STM32F103_RCC_CR_HISON_POS      0       /* Internal high-speed clock enable bit position */
+#define STM32F103_RCC_CR_HSION_POS      0       /* Internal high-speed clock enable bit position */
 #define STM32F103_RCC_CR_HSIRDY_POS     1       /* Internal high-speed clock ready flag bit position */
 #define STM32F103_RCC_CR_HSITRIM_POS    3       /* Internal high-speed clock trimming position */
 #define STM32F103_RCC_CR_HSICAL_POS     8       /* Internal high-speed clock calibration position */
