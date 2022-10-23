@@ -1,3 +1,4 @@
+#include <stdbool.h>
 
 /* PLL clock sources */
 typedef enum

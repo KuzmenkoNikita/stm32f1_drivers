@@ -1,19 +1,20 @@
 #include "stm32f103_rcc.h"
 #include "stm32f103_rcc_reg.h"
+#include "common_macros.h"
 #include <stdint.h>
-
+/* ************************************************************************************ */
 static void stm32f103_rcc_enabe_HSE(bool bypass)
 {
     if(bypass)
     {
-        STM32F103_RCC_CR_REG |= (1 << STM32F103_RCC_CR_HSEBYP_POS);
+        DRV_SET_BIT(STM32F103_RCC_CR_REG, STM32F103_RCC_CR_HSEBYP_POS); 
     }
     else
     {
-        STM32F103_RCC_CR_REG &= ~(1 << STM32F103_RCC_CR_HSEBYP_POS);
+        DRV_CLEAR_BIT(STM32F103_RCC_CR_REG, STM32F103_RCC_CR_HSEBYP_POS); 
     }
 
-    STM32F103_RCC_CR_REG |= (1 << STM32F103_RCC_CR_HSEON_POS);
+    DRV_SET_BIT(STM32F103_RCC_CR_REG, STM32F103_RCC_CR_HSEON_POS);
 
     while(!(STM32F103_RCC_CR_REG & (1 << STM32F103_RCC_CR_HSERDY_POS)));
 } 
